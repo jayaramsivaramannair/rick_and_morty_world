@@ -3,7 +3,7 @@ import React from 'react'
 export default function NameContainer({ character }) {
     return (
         <div className="characterName">
-            <p>{character.name}</p>
+            <p>{`${character.id}.`}{character.name}</p>
         </div>
     )
 }

@@ -3,13 +3,17 @@ import Header from './components/Header.js'
 import Display from './components/Display.js'
 import React, { useEffect, useReducer } from 'react'
 import axios from 'axios';
+//Importing Reducers
 import GlobalState from './Reducers/index.js'
 
+//Creating Context for passing down to other elements
 export const ProfilesContext = React.createContext()
 
 
 function App() {
+
   const [state, dispatch] = useReducer(GlobalState.reducer, GlobalState.initialState)
+
 
   useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/character`)
@@ -23,6 +27,8 @@ function App() {
       })
   }, [])
 
+
+
   return (
     <ProfilesContext.Provider value={{ profiles: state, profilesDispatch: dispatch }}>
       <div className="App">
@@ -32,6 +38,7 @@ function App() {
       </div>
     </ProfilesContext.Provider>
   );
+
 }
 
 export default App;

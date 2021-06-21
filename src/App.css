@@ -37,6 +37,10 @@
   align-self: center;
 }
 
+.imageContainer img {
+  border-radius: 50%;
+}
+
 .profile {
   font-size: 1.2rem;
   grid-column: 2 / 4;
@@ -62,6 +66,45 @@ div .profile, .tab {
   background-color: royalblue;
   border: 1px solid royalblue;
   padding: 3px;
+}
+
+.tab-1 {
+  padding: 5px;
+  color: black;
+  background-color: magenta;
+}
+
+.tab-1, .tab-2, .tab-3, .tab-4, .tab-5 {
+  justify-self: center;
+  align-self: center;
+}
+
+.tab-1:hover {
+  transform: scale(1.2);
+}
+
+.tab-2 {
+  padding: 5px;
+  color: black;
+  background-color: red;
+}
+
+.tab-3 {
+  padding: 5px;
+  color: black;
+  background-color: orange;
+}
+
+.tab-4 {
+  padding: 5px;
+  color: black;
+  background-color: greenyellow;
+}
+
+.tab-5 {
+  padding: 5px;
+  color: black;
+  background-color: cyan;
 }
 
 
