@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header.js'
+import Display from './components/Display.js'
+import React, { useEffect, useReducer } from 'react'
+import axios from 'axios';
+import GlobalState from './Reducers/index.js'
+
+export const ProfilesContext = React.createContext()
+
 
 function App() {
+  const [state, dispatch] = useReducer(GlobalState.reducer, GlobalState.initialState)
+
+  useEffect(() => {
+    axios.get(`https://rickandmortyapi.com/api/character`)
+      .then((response) => {
+        console.log(response.data.results)
+        dispatch({ type: 'FETCH_SUCCESS', payload: response.data.results })
+      })
+      .catch((error) => {
+        console.log("Some Error Occured!")
+        dispatch({ type: 'FETCH_ERROR' })
+      })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProfilesContext.Provider value={{ profiles: state, profilesDispatch: dispatch }}>
+      <div className="App">
+        {console.log('globalstate:', state.profiles)}
+        <Header />
+        <Display />
+      </div>
+    </ProfilesContext.Provider>
   );
 }
 
