@@ -3,11 +3,11 @@ import React from 'react'
 export default function Profile({ character }) {
     return (
         <div className="profile">
-            <div className="tab tab-1">Gender: {character.gender}</div>
-            <div className="tab tab-2">Species: {character.species}</div>
-            <div className="tab tab-3">Location: {character.location.name}</div>
-            <div className="tab tab-4">Origin: {character.origin.name}</div>
-            <div className="tab tab-5">Status: {character.status}</div>
+            <div className="tab tab-1"><span className="label-1">Gender:</span> {character.gender}</div>
+            <div className="tab tab-2"><span className="label-2">Species:</span> {character.species}</div>
+            <div className="tab tab-3"><span className="label-3">Location:</span> {character.location.name}</div>
+            <div className="tab tab-4"><span className="label-4">Origin:</span> {character.origin.name}</div>
+            <div className="tab tab-5"><span className="label-5">Status:</span> {character.status}</div>
         </div>
     )
 }
