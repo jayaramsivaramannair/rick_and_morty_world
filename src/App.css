@@ -16,7 +16,6 @@
 }
 
 .characterName {
-  transform: rotate(-45deg);
   grid-row: 1 / 5;
   letter-spacing: 1em;
   text-transform: uppercase;
@@ -28,6 +27,10 @@
   justify-self: center;
   padding: 5px;
   
+}
+
+.characterName:hover {
+  transform: rotate(-45deg);
 }
 
 .imageContainer {
@@ -66,11 +69,10 @@ div .profile, .tab {
   background-color: royalblue;
   border: 1px solid royalblue;
   padding: 3px;
+  border-radius: 10px;
 }
 
 .tab-1 {
-  padding: 5px;
-  color: black;
   background-color: magenta;
 }
 
@@ -79,32 +81,31 @@ div .profile, .tab {
   align-self: center;
 }
 
-.tab-1:hover {
-  transform: scale(1.2);
+.tab-1:hover, .tab-2:hover, .tab-3:hover, .tab-4:hover, .tab-5:hover {
+  transform: scale(0.95);
+}
+
+.tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6 {
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
 }
 
 .tab-2 {
-  padding: 5px;
-  color: black;
   background-color: red;
 }
 
 .tab-3 {
-  padding: 5px;
-  color: black;
   background-color: orange;
 }
 
 .tab-4 {
-  padding: 5px;
-  color: black;
   background-color: greenyellow;
 }
 
 .tab-5 {
-  padding: 5px;
-  color: black;
   background-color: cyan;
+  grid-column: 1 / 3;
 }
 
 
