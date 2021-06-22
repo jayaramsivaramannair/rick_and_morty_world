@@ -1,4 +1,7 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
   background-color: #293241;
   color: #80b918;
+  box-sizing: border-box;
 }

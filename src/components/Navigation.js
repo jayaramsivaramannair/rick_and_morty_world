@@ -13,12 +13,13 @@ export default function Navigation({ nextProfile, previousProfile }) {
     }
 
     return (
-        <div className="navigation">
-            <div className="arrows">
+        <div className="navigation arrows">
+            <div className="arrow-1">
                 <i className="material-icons backArrow" onClick={backButtonHandler}>
                     arrow_back
                 </i>
-
+            </div>
+            <div className="arrow-2">
                 <i className="material-icons forwardArrow" onClick={nextButtonHandler}>
                     arrow_forward
                 </i>

@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header.js'
+import NewCharacters from './components/NewCharacters.js'
 import Display from './components/Display.js'
 import React, { useEffect, useReducer } from 'react'
 import axios from 'axios';
@@ -34,6 +35,7 @@ function App() {
       <div className="App">
         {console.log('globalstate:', state.profiles)}
         <Header />
+        <NewCharacters />
         <Display />
       </div>
     </ProfilesContext.Provider>

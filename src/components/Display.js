@@ -43,10 +43,10 @@ export default function Display() {
 
     return (
         <div className="container">
+            <Navigation nextProfile={nextProfile} previousProfile={previousProfile} />
             <NameContainer character={character[0]} />
             <ImageContainer character={character[0]} />
             <Profile character={character[0]} />
-            <Navigation nextProfile={nextProfile} previousProfile={previousProfile} />
         </div>
     )
 }
