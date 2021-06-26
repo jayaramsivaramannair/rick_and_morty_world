@@ -18,7 +18,7 @@ function App() {
 
 
   const incrementPage = () => {
-    pageId > 35 ? setPageId(1) : setPageId(pageId + 1)
+    pageId === 34 ? setPageId(1) : setPageId(pageId + 1)
   }
 
   console.log(pageId)
