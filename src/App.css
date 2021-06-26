@@ -2,15 +2,35 @@
 .App {
   display: grid;
   grid-template-columns: 1fr;
+  background-color: #293241;
   grid-gap: 10px;
   max-width: 980px;
   margin: 0 auto;
 }
 
-.header {
-  font-size: 1.5rem;
-  color: royalblue;
+.header h1 {
+  font-size: 2.0rem;
   font-family: 'Permanent Marker', cursive;
+}
+
+.ui.segment {
+  border: none;
+  background-color:  #293241;
+}
+
+.ui.active.dimmer {
+  margin-top: 50px;
+  color: yellowgreen;
+  background-color:  #293241;
+}
+
+ui.massive.text.loader::after {
+  color: yellowgreen;
+}
+
+.ui.large.text.loader{
+  font-family: 'Permanent Marker', cursive;
+  color: yellowgreen;
 }
 
 .characterName {

@@ -25,6 +25,7 @@ function App() {
 
 
   useEffect(() => {
+    dispatch({ type: 'FETCH_PROGRESS' })
     axios.get(`https://rickandmortyapi.com/api/character/?page=${pageId}`)
       .then((response) => {
         console.log(response.data.results)

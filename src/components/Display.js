@@ -12,8 +12,16 @@ export default function Display() {
     const profileLength = profilesFromContext.profiles.profiles.length
     const allProfiles = profilesFromContext.profiles.profiles
 
-    if (!Array.isArray(allProfiles) || allProfiles.length <= 0) {
-        return <div>Loading Results......</div>
+    if (!Array.isArray(allProfiles) || allProfiles.length <= 0 || profilesFromContext.profiles.loading) {
+        return (
+            <div>
+                <div className="ui segment container">
+                    <div className="ui active dimmer">
+                        <div className="ui large text loader">Wubba Lubba Dub Dub</div>
+                    </div>
+                </div>
+            </div>
+        )
     }
 
 
@@ -38,9 +46,9 @@ export default function Display() {
 
     return (
         <div className="container">
-            <Navigation nextProfile={nextProfile} previousProfile={previousProfile} />
             <NameContainer character={character[0]} />
             <ImageContainer character={character[0]} />
+            <Navigation nextProfile={nextProfile} previousProfile={previousProfile} />
             <Profile character={character[0]} />
         </div>
     )

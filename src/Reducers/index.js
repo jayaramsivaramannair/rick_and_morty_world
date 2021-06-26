@@ -20,6 +20,13 @@ const reducer = (state = initialState, action) => {
                 error: 'Something went wrong!',
             }
 
+        case 'FETCH_PROGRESS':
+            return {
+                loading: true,
+                profiles: [],
+                error: ''
+            }
+
         default:
             return state;
     }
