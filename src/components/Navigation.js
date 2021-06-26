@@ -1,14 +1,13 @@
 import React from 'react'
 
+
 export default function Navigation({ nextProfile, previousProfile }) {
 
     const backButtonHandler = (e) => {
-        console.log('back button clicked!')
         previousProfile()
     }
 
     const nextButtonHandler = (e) => {
-        console.log('next button clicked!')
         nextProfile()
     }
 

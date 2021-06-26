@@ -10,15 +10,16 @@ const reducer = (state = initialState, action) => {
             return {
                 loading: false,
                 error: '',
-                profiles: action.payload
+                profiles: action.payload,
             }
 
         case 'FETCH_ERROR':
             return {
                 loading: false,
                 profiles: [],
-                error: 'Something went wrong!'
+                error: 'Something went wrong!',
             }
+
         default:
             return state;
     }

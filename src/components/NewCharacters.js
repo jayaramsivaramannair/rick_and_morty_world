@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function NewCharacters() {
+export default function NewCharacters({ getNextPage }) {
+    const getFreshCharacters = (event) => {
+        getNextPage()
+    }
+
     return (
         <div className="fetchNew">
-            <button>Get New Characters</button>
+            <button onClick={getFreshCharacters}>Get New Characters</button>
         </div>
     )
 }

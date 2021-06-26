@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header.js'
 import NewCharacters from './components/NewCharacters.js'
 import Display from './components/Display.js'
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import axios from 'axios';
 //Importing Reducers
 import GlobalState from './Reducers/index.js'
@@ -14,20 +14,27 @@ export const ProfilesContext = React.createContext()
 function App() {
 
   const [state, dispatch] = useReducer(GlobalState.reducer, GlobalState.initialState)
+  const [pageId, setPageId] = useState(1)
+
+
+  const incrementPage = () => {
+    pageId > 35 ? setPageId(1) : setPageId(pageId + 1)
+  }
+
+  console.log(pageId)
 
 
   useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/character`)
+    axios.get(`https://rickandmortyapi.com/api/character/?page=${pageId}`)
       .then((response) => {
         console.log(response.data.results)
         dispatch({ type: 'FETCH_SUCCESS', payload: response.data.results })
       })
       .catch((error) => {
-        console.log("Some Error Occured!")
+        console.log("Some Error Occurred!")
         dispatch({ type: 'FETCH_ERROR' })
       })
-  }, [])
-
+  }, [pageId])
 
 
   return (
@@ -35,7 +42,7 @@ function App() {
       <div className="App">
         {console.log('globalstate:', state.profiles)}
         <Header />
-        <NewCharacters />
+        <NewCharacters getNextPage={incrementPage} />
         <Display />
       </div>
     </ProfilesContext.Provider>

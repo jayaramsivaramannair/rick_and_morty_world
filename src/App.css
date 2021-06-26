@@ -60,12 +60,20 @@
   background-color: greenyellow;
   padding: 5px;
   border-radius: 5px;
+}
 
+.fetchNew button:hover {
+  cursor: pointer;
 }
 
 .materials-icons, .backArrow, .forwardArrow {
   font-size: 50px;
 }
+
+.materials-icons, .backArrow, .forwardArrow:hover {
+  cursor: pointer;
+}
+
 
 div .profile, .tab {
   margin: 2px;

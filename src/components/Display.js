@@ -8,13 +8,9 @@ import { ProfilesContext } from '../App.js'
 export default function Display() {
 
     const profilesFromContext = useContext(ProfilesContext)
-
     const [currentProfile, setCurrentProfile] = useState(0)
     const profileLength = profilesFromContext.profiles.profiles.length
     const allProfiles = profilesFromContext.profiles.profiles
-    console.log(profilesFromContext)
-
-
 
     if (!Array.isArray(allProfiles) || allProfiles.length <= 0) {
         return <div>Loading Results......</div>
@@ -39,7 +35,6 @@ export default function Display() {
         return newProfile
     })
 
-    console.log(character[0])
 
     return (
         <div className="container">
