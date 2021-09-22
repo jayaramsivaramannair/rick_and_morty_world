@@ -4,22 +4,25 @@ import './App.css';
 import Header from './components/Header.js'
 import NewCharacters from './components/NewCharacters.js'
 import Display from './components/Display.js'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback} from 'react'
 
 
 function App({startFetching, finishFetching}) {
 
   const [pageId, setPageId] = useState(1)
 
-
   const incrementPage = () => {
     pageId === 34 ? setPageId(1) : setPageId(pageId + 1)
   }
 
+  const innerFunctions = useCallback(() => {
+    startFetching();
+    finishFetching(pageId)
+  }, [pageId, startFetching, finishFetching])
+
   useEffect(() => {
-   startFetching();
-   finishFetching(pageId)
-  }, [pageId])
+    innerFunctions()
+  }, [innerFunctions])
 
 
   return (
