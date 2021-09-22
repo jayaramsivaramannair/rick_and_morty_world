@@ -1,18 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
+import {connect} from 'react-redux';
 import NameContainer from './NameContainer.js'
 import ImageContainer from './ImageContainer.js'
 import Navigation from './Navigation.js'
 import Profile from './Profile.js'
-import { ProfilesContext } from '../App.js'
 
-export default function Display() {
+function Display({loading, profiles}) {
 
-    const profilesFromContext = useContext(ProfilesContext)
     const [currentProfile, setCurrentProfile] = useState(0)
-    const profileLength = profilesFromContext.profiles.profiles.length
-    const allProfiles = profilesFromContext.profiles.profiles
+    const profileLength = profiles.length
+    const allProfiles = profiles
 
-    if (!Array.isArray(allProfiles) || allProfiles.length <= 0 || profilesFromContext.profiles.loading) {
+    if (!Array.isArray(allProfiles) || allProfiles.length <= 0 || loading) {
         return (
             <div>
                 <div className="ui segment container">
@@ -53,3 +52,12 @@ export default function Display() {
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        loading: state.profiles.loading,
+        profiles: state.profiles.profiles,
+    }
+}
+
+export default connect(mapStateToProps, null)(Display)
