@@ -9,8 +9,30 @@
 }
 
 .header h1 {
-  font-size: 2rem;
+  font-size: 5rem;
   font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+
+.fetchNew button {
+  font-size: 2rem;
+}
+
+.container {
+  height: 70vh;
+}
+
+.characterName {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+  background-color: royalblue;
+  color: aliceblue;
+  padding: 5px;
+  font-family: 'Fruktur', cursive;
 }
 
 .ui.segment {
@@ -33,25 +55,15 @@ ui.massive.text.loader::after {
   color: yellowgreen;
 }
 
-.characterName {
-  letter-spacing: 1em;
-  text-transform: uppercase;
-  border: 1px solid royalblue;
-  border-radius: 5px;
-  background-color: royalblue;
-  color: aliceblue;
-  padding: 5px;
-  font-family: 'Fruktur', cursive;
-}
-
 .imageContainer {
+  margin: 2rem;
+  display: grid;
+  justify-content: center;
   border-radius: 10px;
 }
 
 .imageContainer img {
   border-radius: 50%;
-  max-width: 150px;
-  max-height: 150px;
 }
 
 .profile {
@@ -88,7 +100,7 @@ ui.massive.text.loader::after {
 .materials-icons,
 .backArrow,
 .forwardArrow {
-  font-size: 50px;
+  font-size: 7rem;
 }
 
 .materials-icons,
@@ -97,14 +109,27 @@ ui.massive.text.loader::after {
   cursor: pointer;
 }
 
+.profile h2 {
+  color: yellowgreen;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 2rem;
+}
+
 div .profile,
 .tab {
   margin: 2px;
   color: aliceblue;
   background-color: royalblue;
   border: 1px solid royalblue;
-  padding: 3px;
   border-radius: 10px;
+  padding-top: 4rem;
+}
+
+div.tab {
+  padding: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .tab-1,
