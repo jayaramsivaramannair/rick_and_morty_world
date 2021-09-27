@@ -1,6 +1,6 @@
 # Ricky and Morty's World
 
-An application to display to image and character profile for each character from the popular show "Rick and Morty"
+An application to display image and character profile for each character from the popular show "Rick and Morty"
 Built with JavaScript, CSS, React and Redux
 
 # Status
